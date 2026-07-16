@@ -22,6 +22,7 @@ class MapstedCordovaPlugin: CDVPlugin {
             let storyboard = UIStoryboard(name: "MapstedCordovaPlugin", bundle: Bundle(for: MapstedCordovaPlugin.self))
             guard let viewController = storyboard.instantiateViewController(withIdentifier: "MAPSTEDVC") as? UIViewController else {
                 print("Error: Failed to instantiate view controller.")
+                self.commandDelegate.send(CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: "Failed to instantiate map view controller"), callbackId: command.callbackId)
                 return
             }
 
@@ -34,10 +35,12 @@ class MapstedCordovaPlugin: CDVPlugin {
             }
 
             topViewController?.present(viewController, animated: true, completion: nil)
+            self.commandDelegate.send(CDVPluginResult(status: CDVCommandStatus_OK), callbackId: command.callbackId)
         } else {
             let storyboard = UIStoryboard(name: "MapstedCordovaPlugin", bundle: Bundle(for: MapstedCordovaPluginPropListViewController.self))
             guard let viewController = storyboard.instantiateViewController(withIdentifier: "MAPSTEDPROPLISTVC") as? UIViewController else {
                 print("Error: Failed to instantiate view controller.")
+                self.commandDelegate.send(CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: "Failed to instantiate property list view controller"), callbackId: command.callbackId)
                 return
             }
 
@@ -52,6 +55,7 @@ class MapstedCordovaPlugin: CDVPlugin {
             let navController = UINavigationController(rootViewController: viewController)
             navController.modalPresentationStyle = .overCurrentContext
             topViewController?.present(navController, animated: true, completion: nil)
+            self.commandDelegate.send(CDVPluginResult(status: CDVCommandStatus_OK), callbackId: command.callbackId)
         }
     }
 
