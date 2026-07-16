@@ -1,0 +1,19 @@
+android {
+    // Add your custom configurations here
+    defaultConfig {
+        // Mapsted SDK 26.7.1 manifest requires these placeholders for manifest merge
+        // (meta-data com.mapsted.positioning.CreatedDate / versionCode).
+        manifestPlaceholders = [
+            versionCode: "1",
+            dateString : new java.text.SimpleDateFormat("yyyyMMdd").format(new java.util.Date())
+        ]
+    }
+    packagingOptions {
+                        exclude 'META-INF/LICENSE.md'
+                        exclude 'META-INF/NOTICE.md'
+                        exclude 'META-INF/gradle/incremental.annotation.processors'
+                    }
+    dataBinding {
+        enabled = true
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "mapsted-cordova-plugin",
+  "version": "26.7.1",
+  "description": "Cordova/Ionic plugin for the Mapsted SDK (native 26.7.1) — indoor/outdoor location and mapping.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Cordova",
+    "Ionic"
+  ],
+  "author": "Mapsted <apps@mapsted.com> (https://github.com/Mapsted)",
+  "license": "SEE LICENSE IN LICENSE"
+}
