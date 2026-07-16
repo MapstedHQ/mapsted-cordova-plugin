@@ -1,5 +1,7 @@
 # mapsted-cordova-plugin
 
+Cordova / Ionic plugin that brings the **Mapsted Mobile SDK** — indoor positioning, mapping, wayfinding, and location-based services — to hybrid apps.
+
 Cordova/Ionic plugin for the Mapsted SDK. This release targets the **native Mapsted SDK 26.7.1**.
 
 ## Installation
@@ -49,6 +51,11 @@ use_frameworks!
 - Add license file in Assets folder (`/app/src/main/assets`) `your_android_license.key`
 
 
+
+## Documentation
+
+Full integration guides, the Ionic/Cordova getting-started tutorial, and API references are
+available at [developer.mapsted.com/mobile-sdk](https://developer.mapsted.com/mobile-sdk/).
 
 ## API
 
